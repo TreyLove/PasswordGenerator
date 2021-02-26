@@ -50,6 +50,7 @@ function generatePassword() {
 
 
 
+
   if (document.getElementById("capLetters").checked === true) {
     finalArray = letters.concat(capLetters)
     console.log(passlength.value)
@@ -74,6 +75,16 @@ function generatePassword() {
     x++
 
 
+  }
+
+  if (finalPass.length > 128) {
+    alert("Please choose a password length of 128 characters or less")
+    return
+  }
+
+  if (finalPass.length < 8) {
+    alert("Please choose a password length of at least 8 characters")
+    return
   }
 
   return finalPass
